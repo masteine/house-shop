@@ -10,7 +10,7 @@ import Loader from "../components/Loader";
 class App extends Component {
 
 	clickHandler = event => {
-		let btnId = event.target.dataset.id;
+		let btnId = ++event.target.dataset.id;
 		this.props.getFetchProducts(btnId)
 	};
 
