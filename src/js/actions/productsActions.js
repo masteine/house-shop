@@ -6,9 +6,10 @@ export const fetchProductsStart = () => ({
 	type: FETCH_PRODUCTS_START
 });
 
-export const fetchProductsSuccess = products => ({
+export const fetchProductsSuccess = (tempId, products) => ({
 	type: FETCH_PRODUCTS_SUCCESS,
 	payload: products,
+	tempId: tempId,
 });
 
 export const fetchProductsFailure = error => ({
@@ -16,15 +17,15 @@ export const fetchProductsFailure = error => ({
 	payload: error,
 });
 
-export default function fetchProducts() {
+export default function fetchProducts(tempId) {
 	return dispatch => {
 		dispatch(fetchProductsStart());
-		return fetch("http://demo4452328.mockable.io/properties")
+		return fetch("http://localhost:3001/data")
 			.then(handleErrors)
 			.then(response => response.json())
 			.then(json => {
-				dispatch(fetchProductsSuccess(json.data));
-				return json.data;
+				dispatch(fetchProductsSuccess(tempId, json));
+				return json;
 			})
 			.catch(error => dispatch(fetchProductsFailure(error)));
 	};

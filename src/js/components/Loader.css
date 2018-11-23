@@ -4,12 +4,12 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 100%;
-	position: absolute;
+	margin: 0 auto;
+	text-align: center;
 }
 
 #fountainTextG {
-	width: 234px;
+	width: auto;
 	margin: auto;
 }
 

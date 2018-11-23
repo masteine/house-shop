@@ -22,7 +22,8 @@ export default function productsReducer(state = initialState, action) {
 			return {
 				...state,
 				loading: false,
-				products: action.payload
+				tempId: action.tempId,
+				products: action.payload,
 			};
 
 		case FETCH_PRODUCTS_FAILURE:
