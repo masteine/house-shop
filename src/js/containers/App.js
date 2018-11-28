@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import fetchProducts from "../actions/productsActions";
 import fetchTemplates from "../actions/templatesActions";
-import ProductList from "../components/ProductList";
+
+import ProductContainer from './ProductContainer';
 
 import Buttons from "../components/Buttons";
 import Loader from "../components/Loader";
@@ -10,8 +11,8 @@ import Loader from "../components/Loader";
 class App extends Component {
 
 	clickHandler = event => {
-		let btnId = ++event.target.dataset.id;
-		this.props.getFetchProducts(btnId)
+		let btnId = +event.target.dataset.id;
+		this.props.getFetchProducts(btnId);
 	};
 
 	render() {
@@ -20,7 +21,7 @@ class App extends Component {
 			templates,
 			products,
 			loading,
-			error
+			error,
 		} = this.props;
 
 		return (
@@ -34,8 +35,7 @@ class App extends Component {
 				{
 					loading ? <Loader/> : null
 				}
-				<ProductList products={products}
-										 templates={templates}/>
+				<ProductContainer products={products}/>
 			</div>
 		);
 	}
@@ -51,7 +51,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	componentDidMount: dispatch(fetchTemplates()),
-	getFetchProducts: (tempId) => dispatch(fetchProducts(tempId)),
+	getFetchProducts: (template) => dispatch(fetchProducts(template)),
 });
 
 export default connect(

@@ -1,15 +1,16 @@
-export const FETCH_PRODUCTS_START = "FETCH_PRODUCTS_START";
-export const FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS";
-export const FETCH_PRODUCTS_FAILURE = "FETCH_PRODUCTS_FAILURE";
+import {
+	FETCH_PRODUCTS_START,
+	FETCH_PRODUCTS_SUCCESS,
+	FETCH_PRODUCTS_FAILURE
+} from '../constants/types';
 
 export const fetchProductsStart = () => ({
 	type: FETCH_PRODUCTS_START
 });
 
-export const fetchProductsSuccess = (tempId, products) => ({
+export const fetchProductsSuccess = (products, template) => ({
 	type: FETCH_PRODUCTS_SUCCESS,
-	payload: products,
-	tempId: tempId,
+	payload: { template, products }
 });
 
 export const fetchProductsFailure = error => ({
@@ -17,14 +18,14 @@ export const fetchProductsFailure = error => ({
 	payload: error,
 });
 
-export default function fetchProducts(tempId) {
+export default function fetchProducts(template) {
 	return dispatch => {
 		dispatch(fetchProductsStart());
 		return fetch("http://localhost:3001/data")
 			.then(handleErrors)
 			.then(response => response.json())
 			.then(json => {
-				dispatch(fetchProductsSuccess(tempId, json));
+				dispatch(fetchProductsSuccess(json, template));
 				return json;
 			})
 			.catch(error => dispatch(fetchProductsFailure(error)));

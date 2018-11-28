@@ -1,13 +1,14 @@
 import React from "react";
-import Product from "./Product";
+import Product from "./Product/index";
 import PropTypes from "prop-types";
 
-const ProductList = ({ products, templates }) => {
+const ProductList = ({ products }) => {
 
 	return (
 		<div className="row d-flex justify-content-start">
 			{products.map(product => (
-				<Product product={product} templates={templates}/>
+				<Product
+					product={product} />
 			))}
 		</div>
 	);

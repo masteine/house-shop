@@ -1,8 +1,8 @@
 import {
 	FETCH_TEMPLATES_START,
 	FETCH_TEMPLATES_SUCCESS,
-	FETCH_TEMPLATES_FAILURE,
-} from "../actions/templatesActions";
+	FETCH_TEMPLATES_FAILURE
+} from '../constants/types';
 
 const initialState = {
 	templates: [],

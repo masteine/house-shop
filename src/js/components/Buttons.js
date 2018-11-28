@@ -2,8 +2,8 @@ import React from "react";
 import "./Buttons.css";
 import PropTypes from "prop-types";
 
-const Buttons = props => {
-	const { buttons, handleClick } = props;
+const Buttons = ({ buttons, handleClick }) => {
+
 	return (
 		<div className="row d-flex justify-content-center"
 				 data-toggle="buttons">
