@@ -1,20 +1,16 @@
-import {
-	FETCH_TEMPLATES_START,
-	FETCH_TEMPLATES_SUCCESS,
-	FETCH_TEMPLATES_FAILURE
-} from '../constants/types';
+import * as types from '../constants/types';
 
 export const fetchTemplatesStart = () => ({
-	type: FETCH_TEMPLATES_START
+	type: types.FETCH_TEMPLATES_START
 });
 
 export const fetchTemplatesSuccess = templates => ({
-	type: FETCH_TEMPLATES_SUCCESS,
+	type: types.FETCH_TEMPLATES_SUCCESS,
 	payload: templates,
 });
 
 export const fetchTemplatesFailure = error => ({
-	type: FETCH_TEMPLATES_FAILURE,
+	type: types.FETCH_TEMPLATES_FAILURE,
 	payload: error,
 });
 

@@ -1,8 +1,4 @@
-import {
-	FETCH_TEMPLATES_START,
-	FETCH_TEMPLATES_SUCCESS,
-	FETCH_TEMPLATES_FAILURE
-} from '../constants/types';
+import * as types from '../constants/types';
 
 const initialState = {
 	templates: [],
@@ -12,20 +8,20 @@ const initialState = {
 
 export default function templatesReducer(state = initialState, action) {
 	switch ( action.type ) {
-		case FETCH_TEMPLATES_START:
+		case types.FETCH_TEMPLATES_START:
 			return {
 				...state,
 				loading: true,
 				error: null,
 			};
-		case FETCH_TEMPLATES_SUCCESS:
+		case types.FETCH_TEMPLATES_SUCCESS:
 			return {
 				...state,
 				loading: false,
 				templates: action.payload,
 			};
 
-		case FETCH_TEMPLATES_FAILURE:
+		case types.FETCH_TEMPLATES_FAILURE:
 			return {
 				...state,
 				loading: false,

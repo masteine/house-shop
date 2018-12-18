@@ -1,8 +1,4 @@
-import {
-	FETCH_PRODUCTS_START,
-	FETCH_PRODUCTS_SUCCESS,
-	FETCH_PRODUCTS_FAILURE
-} from '../constants/types';
+import * as types from '../constants/types';
 
 const initialState = {
 	template: null,
@@ -13,13 +9,13 @@ const initialState = {
 
 export default function productsReducer(state = initialState, action) {
 	switch ( action.type ) {
-		case FETCH_PRODUCTS_START:
+		case types.FETCH_PRODUCTS_START:
 			return {
 				...state,
 				loading: true,
 				error: null,
 			};
-		case FETCH_PRODUCTS_SUCCESS:
+		case types.FETCH_PRODUCTS_SUCCESS:
 			return {
 				...state,
 				loading: false,
@@ -27,7 +23,7 @@ export default function productsReducer(state = initialState, action) {
 				products: action.payload.products,
 			};
 
-		case FETCH_PRODUCTS_FAILURE:
+		case types.FETCH_PRODUCTS_FAILURE:
 			return {
 				...state,
 				loading: false,
