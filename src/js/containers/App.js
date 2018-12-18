@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import fetchProducts from "../actions/productsActions";
 import fetchTemplates from "../actions/templatesActions";
 
-
 import Buttons from "../components/Buttons";
 import Loader from "../components/Loader";
 
