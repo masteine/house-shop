@@ -24,9 +24,9 @@ export default function fetchProducts(template) {
 				dispatch(fetchProductsSuccess(json, template));
 				return json;
 			})
-			.catch(error => dispatch(fetchProductsFailure(error)));
+			.catch(error =>
+				dispatch(fetchProductsFailure(error)));
 	};
-
 }
 
 function handleErrors(response) {
