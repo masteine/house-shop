@@ -17,7 +17,6 @@ class App extends Component {
 
 		const {
 			templates,
-			products,
 			loading,
 			error,
 		} = this.props;

@@ -1,5 +1,4 @@
 import React from "react";
-import Product from "./Product/index";
 import PropTypes from "prop-types";
 
 const ProductList = ({ products }) => {
