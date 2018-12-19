@@ -12,7 +12,7 @@ const Buttons = ({ buttons, handleClick }) => {
 						<button key={button.id}
 										data-id={button.id}
 										onClick={handleClick}
-										className="btn btn-primary btn-md btn-template">
+										className="btn btn-outline-primary btn-md btn-template">
 							Template № {button.id}
 						</button>
 					)

@@ -1,0 +1,6 @@
+.product {
+    padding: 15px;
+    margin: 0 0 15px;
+    box-shadow: 1px 3px 15px 1px rgba(0,0,0,0.1);
+    height: calc(100% - 15px);
+}

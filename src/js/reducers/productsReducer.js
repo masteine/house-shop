@@ -18,13 +18,14 @@ export default function productsReducer(state = initialState, action) {
       };
     case types.FETCH_PRODUCTS_SUCCESS:
       let templateId = action.payload.tempId;
-      let template = action.payload.template;
+      let templateWrap = action.payload.template.filter(i => templateId === i.id);
+      let template = templateWrap[0].template;
       return {
         ...state,
         loading: false,
         tempId: templateId,
         products: action.payload.products,
-        template: template.filter(i => templateId === i.id),
+        template: template,
       };
     case types.FETCH_PRODUCTS_FAILURE:
       return {
