@@ -1,4 +1,4 @@
-import * as types from '../constants/types';
+import * as types from '../constants/types'
 
 export const fetchTemplatesStart = () => ({
 	type: types.FETCH_TEMPLATES_START
@@ -17,11 +17,11 @@ export const fetchTemplatesFailure = error => ({
 export default function fetchTemplates() {
 	return dispatch => {
 		dispatch(fetchTemplatesStart());
-		return fetch("http://localhost:3002/data")
+		return fetch("https://api.myjson.com/bins/yf6gg")
 			.then(handleErrors)
 			.then(response => response.json())
 			.then(json => {
-				dispatch(fetchTemplatesSuccess(json));
+				dispatch(fetchTemplatesSuccess(json.data));
 				return json;
 			})
 			.catch(error => dispatch(fetchTemplatesFailure(error)));

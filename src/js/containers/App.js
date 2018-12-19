@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from "react"
+import { connect } from "react-redux"
 
-import fetchProducts from "../actions/productsActions";
-import fetchTemplates from "../actions/templatesActions";
+import fetchProducts from "../actions/productsActions"
+import fetchTemplates from "../actions/templatesActions"
 
-import Buttons from "../components/Buttons";
-import Loader from "../components/Loader";
+import Buttons from "../components/Buttons"
+import Loader from "../components/Loader"
 
 class App extends Component {
 	clickHandler = event => {
@@ -39,7 +39,6 @@ class App extends Component {
 
 const mapStateToProps = state => ({
 	templates: state.templatesReducer.templates,
-
 	products: state.productsReducer.products,
 	loading: state.productsReducer.loading,
 	error: state.productsReducer.error,
@@ -47,7 +46,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	componentDidMount: dispatch(fetchTemplates()),
-	getFetchProducts: (template) => dispatch(fetchProducts(template)),
+	getFetchProducts: tempId => dispatch(fetchProducts(tempId)),
 });
 
 export default connect(
