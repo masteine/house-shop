@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Buttons = ({ buttons, handleClick }) => {
 
 	return (
-		<div className="row d-flex justify-content-center"
+		<div className="row d-flex justify-content-center mb-md-5"
 				 data-toggle="buttons">
 			{
 				buttons.map(button => (
