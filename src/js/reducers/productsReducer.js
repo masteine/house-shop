@@ -15,6 +15,7 @@ export default function productsReducer(state = initialState, action) {
         ...state,
         loading: true,
         error: null,
+        template: [],
       };
     case types.FETCH_PRODUCTS_SUCCESS:
       let templateId = action.payload.tempId;
