@@ -23,18 +23,15 @@ const Product = ({ product, productTemplate }) => {
       <div className="product">
         {
           productTemplate.forEach(componentTemp => {
-
-            // console.log(component.key);
-
-            fragmentArray.forEach( component => {
+            if( componentTemp.children ) {
+              console.log("children")
+            }
+            fragmentArray.forEach(component => {
               if ( componentTemp.component === component.key ) {
                 componentArray = [...componentArray, component];
-                console.log(componentArray)
               }
             });
-
           })
-
         }
         {
           componentArray.map(componentItem => (
