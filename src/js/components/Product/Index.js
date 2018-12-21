@@ -18,18 +18,23 @@ const Product = ({ product, productTemplate }) => {
   let componentArray = [];
 
   return (
-    <Link to={{pathname: `/product/${product.id}`}}
-className="col-lg-4 col-md-6 d-flex ">
+    <Link to={{ pathname: `/product/${product.id}` }}
+          className="col-lg-4 col-md-6 d-flex ">
       <div className="product">
         {
-          fragmentArray.forEach(component => {
+          productTemplate.forEach(componentTemp => {
+
             // console.log(component.key);
-            productTemplate.forEach(componentTemp => {
+
+            fragmentArray.forEach( component => {
               if ( componentTemp.component === component.key ) {
                 componentArray = [...componentArray, component];
+                console.log(componentArray)
               }
             });
+
           })
+
         }
         {
           componentArray.map(componentItem => (
