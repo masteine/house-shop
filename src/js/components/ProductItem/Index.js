@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, Route } from "react-router-dom"
 import Address from "./Address"
 import Images from "./Images"
 import Area from "./Area"

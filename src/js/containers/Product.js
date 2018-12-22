@@ -1,7 +1,7 @@
 import React from "react"
 
-const Product = props => {
-	const { ...product } = props;
+const Product = ({ product, ...props}) => {
+
 	return (
 		<div className="container">
 			<div className="row">
