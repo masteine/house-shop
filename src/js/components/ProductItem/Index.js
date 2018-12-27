@@ -1,5 +1,6 @@
 import React from "react"
-import { Link, Route } from "react-router-dom"
+import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 import Address from "./Address"
 import Images from "./Images"
 import Area from "./Area"
@@ -26,23 +27,30 @@ const ProductItem = ({ product, productTemplate }) => {
 	});
 
 	return (
-		<Link to={{
-			pathname: `/product-details/${product.id}`,
-			match: product,
-		}}
-					className="col-lg-4 col-md-6 d-flex ">
-			<div className="product">
-				{
-					componentArray.map(componentItem => (
-						<React.Fragment>
-							{componentItem}
-						</React.Fragment>
-					))
-				}
-			</div>
-		</Link>
+		<React.Fragment>
+			<Link to={{
+				pathname: `/product/${product.id}`,
+			}}
+						className="col-lg-4 col-md-6 d-flex ">
+				<div className="product">
+					{
+						componentArray.map(componentItem => (
+							<React.Fragment key={product.id++}>
+								{componentItem}
+							</React.Fragment>
+						))
+					}
+				</div>
+			</Link>
+
+		</React.Fragment>
 	)
 };
+
 export default ProductItem;
 
+ProductItem.propTypes = {
+	product: PropTypes.object,
+	productTemplate: PropTypes.array,
+};
 

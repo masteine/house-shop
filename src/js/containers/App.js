@@ -1,22 +1,24 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home"
-import Product from "./Product"
 
-const App = ({ match }) => {
+import Home from "./Home"
+import ProductDetails from "../components/ProductDetails/ProductDetails"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const App = match => {
 
 	return (
 		<Router>
-			<Switch>
-				<div className="container app-container">
-					<Route path="/" component={Home} exact/>
-					<Route path="/product-details"
-								 render={props => <Product product={match} {...props} />}
-					/>
-				</div>
-			</Switch>
+			<div className="container">
+				<Switch>
+					<Route component={Home} exact/>
+					<Route path="/product/"
+								 {match}
+								 component={ProductDetails}/>
+				</Switch>
+			</div>
 		</Router>
 	);
+
 };
 
-export default App
+export default App;

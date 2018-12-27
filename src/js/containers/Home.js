@@ -6,7 +6,7 @@ import fetchTemplates from "../actions/templatesActions"
 
 import Buttons from "../components/Button/Buttons"
 import Loader from "../components/Loader/Loader"
-import ProductList from "../components/ProductList"
+import ProductList from "../components/ProductList/ProductList"
 
 class Home extends Component {
 
@@ -25,7 +25,7 @@ class Home extends Component {
 		} = this.props;
 
 		return (
-			<div>
+			<div className="container">
 				<h1> Home for sale </h1>
 				<Buttons buttons={templates}
 								 handleClick={this.clickHandler}/>
