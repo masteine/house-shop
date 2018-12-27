@@ -7,7 +7,8 @@ const ProductList = ({ products, productTemplate }) => {
 		<div className="row d-flex justify-content-start align-content-stretch">
 			{products.map(product => (
 				<ProductItem key={product.id}
-										 product={product} productTemplate={productTemplate}/>
+										 product={product}
+										 productTemplate={productTemplate}/>
 			))}
 		</div>
 	);
