@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 const Buttons = ({ buttons, handleClick }) => {
 
 	return (
-		<div className="row d-flex justify-content-center mb-md-5"
+		<div className="row d-flex justify-content-center mb-5"
 				 data-toggle="buttons">
 			{
 				buttons.map(button => (
 						<button key={button.id}
 										data-id={button.id}
 										onClick={handleClick}
-										className="btn btn-outline-primary btn-md btn-template">
+										className="col-sm-3 btn btn-outline-primary btn-template">
 							Template № {button.id}
 						</button>
 					)

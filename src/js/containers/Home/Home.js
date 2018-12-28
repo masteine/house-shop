@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 
-import fetchProducts from "../actions/productsActions"
-import fetchTemplates from "../actions/templatesActions"
+import fetchProducts from "../../actions/productsActions"
+import fetchTemplates from "../../actions/templatesActions"
 
-import Buttons from "../components/Button/Buttons"
-import Loader from "../components/Loader/Loader"
-import ProductList from "../components/ProductList/ProductList"
+import Buttons from "../../components/Button/Buttons"
+import Loader from "../../components/Loader/Loader"
+import ProductList from "../../components/ProductList/ProductList"
 
 class Home extends Component {
 

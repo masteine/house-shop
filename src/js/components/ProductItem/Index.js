@@ -8,7 +8,7 @@ import Price from "./Price"
 
 import "./Index.css"
 
-const ProductItem = ({ product, productTemplate }) => {
+const Product = ({ product, productTemplate, props }) => {
 
 	const AREA = <Area key="AREA" area={product.area}/>;
 	const ADDRESS = <Address key="ADDRESS" full_address={product.full_address}/>;
@@ -30,6 +30,7 @@ const ProductItem = ({ product, productTemplate }) => {
 		<React.Fragment>
 			<Link to={{
 				pathname: `/product/${product.id}`,
+				match: props,
 			}}
 						className="col-lg-4 col-md-6 d-flex ">
 				<div className="product">
@@ -47,9 +48,9 @@ const ProductItem = ({ product, productTemplate }) => {
 	)
 };
 
-export default ProductItem;
+export default Product;
 
-ProductItem.propTypes = {
+Product.propTypes = {
 	product: PropTypes.object,
 	productTemplate: PropTypes.array,
 };
