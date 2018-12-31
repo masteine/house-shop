@@ -1,6 +1,6 @@
 import React from "react"
 
-const ProductDetails = ({ props, match }) => {
+const ProductDetails = ({ props, match, product }) => {
 	return (
 		<div className="container">
 			<div className="row">

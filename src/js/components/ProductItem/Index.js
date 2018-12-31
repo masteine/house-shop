@@ -36,7 +36,7 @@ const Product = ({ product, productTemplate, props }) => {
 				<div className="product">
 					{
 						componentArray.map(componentItem => (
-							<React.Fragment key={product.id++}>
+							<React.Fragment>
 								{componentItem}
 							</React.Fragment>
 						))
