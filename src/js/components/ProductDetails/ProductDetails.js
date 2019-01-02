@@ -1,6 +1,9 @@
 import React from "react"
 
-const ProductDetails = ({ props, match, product }) => {
+const ProductDetails = ({ props, match }) => {
+	console.log(
+		match,
+	);
 	return (
 		<div className="container">
 			<div className="row">

@@ -1,3 +1,4 @@
-.btn-template {
+.btn-template.btn {
 	margin: 15px;
+	transition: 0.25s all;
 }
