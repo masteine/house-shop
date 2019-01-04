@@ -1,0 +1,40 @@
+.slider-container {
+	position: relative;
+}
+
+.btn-next,
+.btn-prev {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	transition: 0.3s all;
+}
+
+.btn-next {
+	right: -25px;
+	border-left: 3px solid #007bff;
+	border-top: 3px solid #007bff;
+	width: 15px;
+	height: 15px;
+	transform: rotate(135deg);
+	transition: 0.15s all;
+}
+
+.btn-next:hover {
+	transform: rotate(135deg) scale(1.15);
+}
+
+.btn-prev {
+	left: -25px;
+	border-left: 3px solid #007bff;
+	border-top: 3px solid #007bff;
+	width: 15px;
+	height: 15px;
+	transform: rotate(-45deg);
+	transition: 0.15s all;
+}
+
+.btn-prev:hover {
+	transform: rotate(-45deg) scale(1.15);
+}
