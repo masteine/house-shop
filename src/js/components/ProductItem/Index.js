@@ -29,6 +29,7 @@ const Product = props => {
 		<React.Fragment>
 			<Link to={{
 				pathname: `/product/${product.id}`,
+				state: product
 			}}
 						className="col-lg-4 col-md-6 d-flex ">
 				<div className="product">
