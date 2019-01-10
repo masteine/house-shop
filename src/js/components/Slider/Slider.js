@@ -6,11 +6,9 @@ export default function Slider({ imgArray }) {
 	let currentSlide = 0;
 
 	let prevSlide = () => {
-		 currentSlide = currentSlide + 1
 	};
 
 	let nextSlide = () => {
-		currentSlide = currentSlide + 1
 	};
 
 	if ( imgArray.length < 2 ) {
@@ -21,15 +19,15 @@ export default function Slider({ imgArray }) {
 	} else {
 		return (
 			<div className="slider-container">
-				<div className="btn-prev"
-						 onClick={prevSlide}>
-				</div>
+				{/*<div className="btn-prev"*/}
+						 {/*onClick={prevSlide}>*/}
+				{/*</div>*/}
 				<img className="slider-item"
 						 src={imgArray[currentSlide]}
 						 alt="product"/>
-				<div className="btn-next"
-						 onClick={nextSlide}>
-				</div>
+				{/*<div className="btn-next"*/}
+						 {/*onClick={nextSlide}>*/}
+				{/*</div>*/}
 			</div>
 
 		)

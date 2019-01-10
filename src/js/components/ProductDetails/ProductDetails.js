@@ -18,7 +18,7 @@ const ProductDetails = ({ ...props }) => {
 				<div className="col-md-12 d-flex align-items-center flex-column">
 					<h1>Product</h1>
 				</div>
-				<div className="col-md-6">
+				<div className="col-md-6 mb-sm-5 mb-5">
 					<div className="product-details__img">
 						<Slider imgArray={product.images} />
 					</div>
